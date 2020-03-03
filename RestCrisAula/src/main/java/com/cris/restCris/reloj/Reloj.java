@@ -36,4 +36,14 @@ public class Reloj {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "\n\nReloj {"
+				+ "\n\tnombre:" + nombre + "," 
+				+ "\n\thora:" + hora + ","
+				+ "\n\tminutos:" + minutos + ","
+				+ "\n\tsegundos:" + segundos 
+				+ "\n}";
+	}
+	
 }
