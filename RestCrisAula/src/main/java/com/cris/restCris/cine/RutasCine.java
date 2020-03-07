@@ -2,8 +2,11 @@ package com.cris.restCris.cine;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,6 +39,21 @@ public class RutasCine {
 	@PostMapping(value="/addCine")
 	ResponseEntity<Cine> addCine(@RequestBody Cine cine) {
 		
-		return new ResponseEntity<Cine>(cine, HttpStatus.I_AM_A_TEAPOT);
+		return new ResponseEntity<Cine>(cine, HttpStatus.OK);
+	}
+	
+	
+	@PutMapping("/addCine/{id}")
+	public void update(@RequestBody Cine cine, @PathVariable Integer id) {
+		
+		System.out.println(cine);
+		System.out.println(id);
+	}
+	
+	
+	@DeleteMapping("/deleteCine/{id}")
+	public void delete(@PathVariable Integer id) {
+		
+		System.out.println(id);
 	}
 }

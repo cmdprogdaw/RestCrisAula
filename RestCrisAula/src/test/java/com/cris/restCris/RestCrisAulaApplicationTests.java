@@ -10,7 +10,6 @@ import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.cris.restCris.gato.Coches;
 import com.cris.restCris.gato.Gato;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -53,22 +52,6 @@ class RestCrisAulaApplicationTests {
 		System.out.println(response.hasBody());
 		
 		assertTrue(request.hasBody());
-		assertTrue(response.hasBody());
-	}
-
-	@Test
-	void pruebaGETYaiza() throws URISyntaxException {
-		
-		URI myUrl = new URI("http://192.168.10.11:1010/coche");
-		RequestEntity<Coches> request = new RequestEntity<Coches>(HttpMethod.GET, myUrl); 
-		
-		ResponseEntity<Coches> response;
-		RestTemplate ejecutor = new RestTemplate();
-		response = ejecutor.exchange(request, Coches.class);
-		
-		System.out.println(response.getBody());
-		System.out.println(response.hasBody());
-		
 		assertTrue(response.hasBody());
 	}
 	
