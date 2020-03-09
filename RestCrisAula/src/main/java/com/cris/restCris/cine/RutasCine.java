@@ -43,7 +43,7 @@ public class RutasCine {
 	}
 	
 	
-	@PutMapping("/addCine/{id}")
+	@PutMapping("/updateCine/{id}")
 	public void update(@RequestBody Cine cine, @PathVariable Integer id) {
 		
 		System.out.println(cine);
