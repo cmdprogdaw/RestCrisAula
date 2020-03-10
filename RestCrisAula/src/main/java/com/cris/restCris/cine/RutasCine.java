@@ -44,7 +44,14 @@ public class RutasCine {
 	
 	
 	@PutMapping("/updateCine/{id}")
-	public void update(@RequestBody Cine cine, @PathVariable Integer id) {
+	public void update(@RequestBody Cine cine, @PathVariable Integer id) { //da igual devolver algo o no
+		
+//		me aseguro de guardar el ID, para que no cree otro cine nuevo, y por si alguien se le olvida rellenar el ID en el json
+		
+		// cine.setId(id);
+		
+//		guardo
+		// cinesDAO.save(cine);
 		
 		System.out.println(cine);
 		System.out.println(id);
@@ -52,7 +59,10 @@ public class RutasCine {
 	
 	
 	@DeleteMapping("/deleteCine/{id}")
-	public void delete(@PathVariable Integer id) {
+	public void delete(@PathVariable Integer id) { //da igual devolver algo o no
+		
+		// guardo
+		// cinesDAO.deleteById(cine);
 		
 		System.out.println(id);
 	}
